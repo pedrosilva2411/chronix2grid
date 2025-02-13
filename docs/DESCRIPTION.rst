@@ -16,10 +16,13 @@ Inputs
 ===============
 Within the input folder it is necessary to put all the requirements and information regarding the generation of chronics in a folder named "generation". Inside it, data will be divided in two forms: 
 
-* *patterns*: Files used as reference to implement pattern-based methods.
-* *"your case*: 
+* *patterns*: Files used as reference to implement pattern-based methods (e.g. hydro pattern) 
+* *"your case environment"*: data regarding the environment characteristics and customizable parameters
 
-In *params.json* there are some settings concerning the whole generation process
+General inputs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In *params.json* there are some settings concerning the whole generation process:
 
 * **dt** the time resolution of the final chronics that will be modeled.
 * **planned_std** standard deviation of noise for the forecasted chronics (e.g. *load_p_forecasted.csv.bz2* which correspond to non-exact planned chronics.
