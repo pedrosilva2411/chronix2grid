@@ -12,8 +12,12 @@ This chapter describes the methods they include and how to set their configurati
 
 .. _correlated-noise:
 
-General inputs
+Inputs
 ===============
+Within the input folder it is necessary to put all the requirements and information regarding the generation of chronics in a folder named "generation". Inside it, data will be divided in two forms: 
+
+* *patterns*: Files used as reference to implement pattern-based methods.
+* *"your case*: 
 
 In *params.json* there are some settings concerning the whole generation process
 
