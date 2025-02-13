@@ -8,7 +8,7 @@ Introduction
 ============
 
 Some generation models are already implemented within chronix2grid as examples for other model implementation.
-This chapter describes the methods they include and how to set their configuration
+This chapter describes the methods they include and how to set their configuration.
 
 .. _correlated-noise:
 
