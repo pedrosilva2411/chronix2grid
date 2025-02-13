@@ -54,7 +54,7 @@ At each node (x,y,t) an independent random gaussian noise :math:`N(0,1)` is comp
 
 This mesh ensures that each network node (generator or load) is associated with its four nearest mesh neighbors. Thus, spatial interpolation is performed at the specific (x,y) location of the network node, weighted inversely by the distance of the four surrounding points.
 
-.. image:: ../pictures/spatial_correlation.png
+.. image:: ../pictures/mesh_v2.png
 
 
 Temporal correlation
