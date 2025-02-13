@@ -14,10 +14,10 @@ This chapter describes the methods they include and how to set their configurati
 
 Inputs
 ===============
-Within the input folder it is necessary to put all the requirements and information regarding the generation of chronics in a folder named "generation". Inside it, data will be divided in two forms: 
+Inside the input folder, all necessary requirements and information for chronics generation must be stored in a subfolder named "generation". This subfolder is structured into two categories:
 
-* *patterns*: Files used as reference to implement pattern-based methods (e.g. hydro pattern) 
-* *"your case environment"*: data regarding the environment characteristics and customizable parameters
+* **patterns** files used as reference to implement pattern-based methods (e.g. hydro pattern) 
+* **"your case environment"** data regarding the environment characteristics and customizable parameters
 
 General inputs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -39,20 +39,20 @@ They are based on:
 * A coarse 3-dimensional mesh (x,y,t) with independent noise
 * The spatial and temporal interpolation of this noise at the specific location of generators and specific moments of time
 
-In *params_res.json* and *params_load.json* you can find all the required parameter for this correlated noise generation, which can be set separately between load and renewable production generation:
+In *params_res.json* and *params_load.json* you can find all the required parameter for this correlated noise generation, which can be set separately between load and renewable production generation, providing the ability to use meshes with varying characteristics and precision:
 
 * **Lx**, **Ly** the total length of the mesh
 * **dx_corr**, **dy_corr** the granularity of the coarse mesh. it represents the distance at which we consider that spatial phenomenons are independent
-* **solar_corr**, **short_wind_corr**, **medium_wind_corr**, **long_wind_corr** and **temperature_corr** which define the coarse time resolution for each type of noise
+* **solar_corr**, **short_wind_corr**, **medium_wind_corr**, **long_wind_corr** (renewable) and **temperature_corr** (load) which define the coarse time resolution for each type of noise
+
 
 Spatial correlation
 """"""""""""""""""""""""
 
 For each coarse time step t, a 2-dimensional coarse mesh is built.
-At each node (x,y,t) an independent random gaussian noise :math:`N(0,1)` is computed
+At each node (x,y,t) an independent random gaussian noise :math:`N(0,1)` is computed.
 
-Then a spatial interpolation is made at the specific location (x,y) of the generator,
-weighted by the distance ot its nearest neighbour in the mesh
+This mesh ensures that each network node (generator or load) is associated with its four nearest mesh neighbors. Thus, spatial interpolation is performed at the specific (x,y) location of the network node, weighted inversely by the distance of the four surrounding points.
 
 .. image:: ../pictures/spatial_correlation.png
 
