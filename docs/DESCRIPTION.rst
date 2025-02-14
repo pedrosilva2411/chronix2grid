@@ -16,7 +16,7 @@ Inputs
 ===============
 Inside the input folder, all necessary requirements and information for chronics generation must be stored in a subfolder named "generation". This subfolder is structured into two categories:
 
-* **patterns** files used as reference to implement pattern-based methods (e.g. hydro pattern) 
+* **patterns** files used as reference to implement pattern-based methods (e.g. *load_weekly_pattern.csv*) 
 * **"your case environment"** data regarding the environment characteristics and customizable parameters
 
 General inputs
@@ -49,17 +49,29 @@ In *params_res.json* and *params_load.json* you can find all the required parame
 Spatial correlation
 """"""""""""""""""""""""
 
-For each coarse time step t, a 2-dimensional coarse mesh is built.
-At each node (x,y,t) an independent random gaussian noise :math:`N(0,1)` is computed.
+For each coarse time step t, a 2-dimensional coarse mesh is built
+At each node (x,y,t) an independent random gaussian noise :math:`N(0,1)` is computed
 
-This mesh ensures that each network node (generator or load) is associated with its four nearest mesh neighbors. Thus, spatial interpolation is performed at the specific (x,y) location of the network node, weighted inversely by the distance of the four surrounding points.
+This mesh ensures that each network node (generator or load) is associated with its four nearest mesh neighbors. Thus, spatial interpolation is performed at the specific (x,y) location of the network node, weighted inversely by the distance of the four surrounding points
 
 .. image:: ../pictures/mesh_v2-removebg-preview.png
 
+Therefore, for each network node located at x,y
+
+.. math:: w_k = \frac{1}{d_k}
+
+.. math:: GenNoise(x,y) = \frac{\sum\limits_{k=1}^{4} w_k \cdot N_k}{\sum\limits_{k=1}^{4} w_k}
+
+
 Where:
 
-* **Generator(x,y)** location of the node network to interpolate ççççççççççççççç 
-* **d1**,**d2**,**d3**,**d4** distances regarding the four nearest mesh neighbour
+* **Generator(x,y)** location of the network node to interpolate respective noise 
+* **d1**, **d2**, **d3**, **d4** distances to the four sorrounding neighbours
+* :math:'w_\text{k}' weight of each neighbour 
+* :math:'NodeNoise_\{k}' node independent gaussian noise of each neighbour 
+
+
+
 
 Temporal correlation
 """"""""""""""""""""""""
