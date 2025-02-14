@@ -16,7 +16,7 @@ Inputs
 ===============
 Inside the input folder, all necessary requirements and information for chronics generation must be stored in a subfolder named "generation". This subfolder is structured into two categories:
 
-* **patterns** files used as reference to implement pattern-based methods (e.g. *load_weekly_pattern.csv*) 
+* **patterns** data used as reference to implement pattern-based methods (e.g. *load_weekly_pattern.csv*) 
 * **"your case environment"** data regarding the environment characteristics and customizable parameters
 
 General inputs
@@ -58,19 +58,17 @@ This mesh ensures that each network node (generator or load) is associated with 
 
 Therefore, for each network node located at x,y
 
-.. math:: w_k = \frac{1}{d_k}
+.. math:: w_\text{k} = \frac{1}{d_\text{k}}, for k ∈ [1,4]
 
-.. math:: GenNoise(x,y) = \frac{\sum\limits_{k=1}^{4} w_k \cdot N_k}{\sum\limits_{k=1}^{4} w_k}
+.. math:: GenNoise(x,y) = \frac{\sum\limits_{k=1}^{4} w_\text{k} \cdot N_\text{k}}{\sum\limits_{k=1}^{4} w_\text{k}}
 
 
 Where:
 
-* **Generator(x,y)** location of the network node to interpolate respective noise 
-* **d1**, **d2**, **d3**, **d4** distances to the four sorrounding neighbours
-* :math:'w_\text{k}' weight of each neighbour 
-* :math:'NodeNoise_\{k}' node independent gaussian noise of each neighbour 
-
-
+* **Generator(x,y)** location of the network node where noise is interpolated 
+* **d1**, **d2**, **d3**, **d4** distances to the four nearest mesh nodes
+* :math:`w_\text{k}` weight of the corresponding node, ensuring closer nodes have a higher influence
+* :math:`NodeNoise_\text{k}` independent Gaussian noise generated at each neighboring mesh node 
 
 
 Temporal correlation
@@ -78,7 +76,7 @@ Temporal correlation
 
 Then a temporal auto-correlation structure is achieved. For each category, we go from
 resolution **[category]_corr** (at which noises have been generated independently in time)
-to resolution **dt** thanks to spline interpolation
+to resolution **dt** thanks to spline interpolation (linear, quadratic, cubic)
 
 Solar generation
 ^^^^^^^^^^^^^^^^^^
