@@ -63,7 +63,7 @@ Therefore, for each network node located at x,y
 .. math:: GenNoise(x,y) = \frac{\sum\limits_{k=1}^{4} w_\text{k} \cdot N_\text{k}}{\sum\limits_{k=1}^{4} w_\text{k}}
 
 
-Where: hgcvjh
+Where: 
 
 * **Generator(x,y)** location of the network node where noise is interpolated 
 * **d1**, **d2**, **d3**, **d4** distances to the four nearest mesh nodes
