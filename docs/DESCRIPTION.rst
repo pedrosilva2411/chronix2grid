@@ -88,11 +88,20 @@ For solar generation, some additional parameters are provided:
     * **solar_corr** - resolution of temporal autocorrelation in noise (see :ref:`correlated-noise`)
     * **std_solar_noise** - standard deviation of the spatial and temporal correlated noise. It will be marked as :math:`\sigma`
     * **smooth_dist** - standard deviation of additional centered gaussian noise (will be normalized by Pmax). It will be marked as :math:`s`
-    * **scale_solar_coord_for_correlation** - Expands the noise mesh to accommodate a scaling of solar generator coordinates, spreading the generator nodes and reducing correlation between them
+    * **scale_solar_coord_for_correlation** - expands the noise mesh to accommodate a scaling of solar generator coordinates, spreading the generator nodes and reducing correlation between them
+    * **solar_night_hour** - time interval during which solar generation is set to zero, regardless of the season.
 
 For each solar generator located at x, y and with max power generation of :math:`P_\text{max}`
 
-.. math:: prod_t(x,y) = P_\text{max} * smooth(pattern_t * (0.75+\sigma f_t^\text{solar}(x,y)) + n_s(x,y,t,P_\text{max}))
+.. math:: prod_t(x,y) = P_\text{max} * smooth(pattern_t * (0.75+\sigma f_t^\text{solar}(x,y)))
+
+
+
+
+.. _n_s(x,y,t,P_\text{max})
+
+
+
 
 Where :
 
