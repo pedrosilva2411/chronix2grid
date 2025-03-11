@@ -1,8 +1,8 @@
 {
   "Lx": 1000,
   "Ly": 1000,
-  "dx_corr": 800,
-  "dy_corr": 800,
+  "dx_corr": 200,
+  "dy_corr": 200,
   "long_wind_corr": 10080,
   "medium_wind_corr": 360,
   "short_wind_corr": 60,
