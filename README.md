@@ -58,7 +58,7 @@ A backend for dispatch has been implemented with PyPSA
  ```commandline
 pip install -U pypsa
 ```
-Note: Currently, HIGHS is used as the Optimal Power Flow (OPF) solver due to its fast computation. If you prefer the CBC solver, please install it from: https://projects.coin-or.org/Cbc
+Note: Currently, HIGHS is used as the Optimal Power Flow (OPF) solver due to its fast computation. If you prefer the CBC solver, please install it from: [https://projects.coin-or.org/Cbc](https://github.com/coin-or/Cbc/releases)
 
 ## Getting Started
 Four notebooks are provided to get you started with this package:
