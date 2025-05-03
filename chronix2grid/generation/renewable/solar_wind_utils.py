@@ -93,8 +93,8 @@ def compute_solar_series(prng, locations, Pmax, solar_noise, params,
         mean_solar_pattern = 0.75
         
     signal = solar_pattern * (mean_solar_pattern + std_solar_noise * final_noise)
-    #signal += prng.uniform(0, smoothdist/Pmax, signal.shape) #to be revised: since smmothdist/PMax is very small, the added noise compared to the previous sinal was unsignificant
-    #signal += np.random.uniform(0, smoothdist / Pmax, signal.shape) #older version - to be removed
+    signal += prng.uniform(0, smoothdist, signal.shape) #to be revised: since smmothdist/PMax is very small, the added noise compared to the previous sinal was unsignificant
+    #signal += np.random.uniform(0, smoothdist, signal.shape) #older version - to be removed
     # signal[signal > 1] = 1
     signal[signal < tol] = 0.
     signal = smooth(signal)
