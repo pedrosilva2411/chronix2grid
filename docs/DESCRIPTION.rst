@@ -65,10 +65,10 @@ Therefore, for each network node located at x,y
 
 Where: 
 
-* **Generator(x,y)** location of the network node where noise is interpolated 
-* **d1**, **d2**, **d3**, **d4** distances to the four nearest mesh nodes
-* :math:`w_\text{k}` weight of the corresponding node, ensuring closer nodes have a higher influence
-* :math:`NodeNoise_\text{k}` independent Gaussian noise generated at each neighboring mesh node 
+* **Generator(x,y)** is the location of the network node where noise is interpolated 
+* **d1**, **d2**, **d3**, **d4** are the distances to the four nearest mesh nodes
+* :math:`w_\text{k}` is the weight of the corresponding node, ensuring closer nodes have a higher influence
+* :math:`NodeNoise_\text{k}` is the independent Gaussian noise generated at each neighboring mesh node 
 
 
 Temporal correlation
@@ -119,7 +119,7 @@ interval :math:`[0,1]`. Finally, this normal production is rescaled to :math:`P_
    :scale: 50 %
    :alt: Solar year example
 
-   Example of generated solar chronic (in MW) across year 2012. Pmax of the solar farm is 37.3 MW. :math:`solar_\text{corr} = 20 minutes` - :math:`smooth_\text{dist} = 0.001` - :math:`\sigma = 0.4`
+   Example of generated solar chronic (in MW) across year 2012. Pmax of the solar farm is 37.3 MW. :math:`solar_\text{corr} = 20 minutes`; :math:`smooth_\text{dist} = 0.001`; :math:`\sigma = 0.4`
 
 .. figure:: ../pictures/solar_gen_10_5_chronic_example_week.PNG
    :scale: 50 %
@@ -171,7 +171,7 @@ Where:
    :scale: 50 %
    :alt: Wind year example
 
-   Example of generated wind chronic (in MW) across year 2012. Pmax of the wind farm is 67.2 MW. :math:`wind_\text{corr} = 300 min, 1440 min, 20160 min` - :math:`smooth_\text{dist} = 0.001` - :math:`\sigma = 0.02, 0.15, 0.15`
+   Example of generated wind chronic (in MW) across year 2012. Pmax of the wind farm is 67.2 MW. :math:`wind_\text{corr} = 300 min, 1440 min, 20160 min`; :math:`smooth_\text{dist} = 0.001`; :math:`\sigma = 0.02, 0.15, 0.15`
 
 .. figure:: ../pictures/wind_gen_111_59_chronic_example_week.PNG
    :scale: 50 %
@@ -210,7 +210,7 @@ Where :math:`f_t^\text{temperature}(x,y)` is the temperature correlated noise (s
    :scale: 50 %
    :alt: Load year example
 
-   Example of generated load chronic (in MW) across year 2012 in region R3. Pmax of the load is 77.1 MW. :math:`temperature_\text{corr} = 400 min` - :math:`\sigma = 0.06`
+   Example of generated load chronic (in MW) across year 2012 in region R3. Pmax of the load is 77.1 MW. :math:`temperature_\text{corr} = 400 min`; :math:`\sigma = 0.06`
 
 .. figure:: ../pictures/load_87_70_chronic_example_week.PNG
    :scale: 50 %
