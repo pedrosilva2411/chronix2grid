@@ -9,7 +9,8 @@ Step 1: Create a virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ``conda create -n venv_chronix2grid python=3.9``
-``conda activate venv chronix2grid``
+
+``conda activate venv_chronix2grid``
 
 
 
@@ -17,9 +18,13 @@ Step 2 (first option): Install from source
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ``mkdir c2g_test``
+
 ``cd c2g_test``
+
 ``git clone https://github.com/Grid2op/chronix2grid.git``
+
 ``cd chronix2grid``
+
 ``pip install -U .``
 
 
