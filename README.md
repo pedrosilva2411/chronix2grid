@@ -28,7 +28,7 @@ See the documentation at https://chronix2grid.readthedocs.io/en/latest/
 #### Step 1: Create a virtual environment
 ```commandline
 conda create -n venv_chronix2grid python=3.9
-conda activate venv chronix2grid
+conda activate venv_chronix2grid
 ```
 
 #### Step 2 (first option): Install from source
