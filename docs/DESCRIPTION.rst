@@ -133,7 +133,7 @@ Single pattern profile
 """"""""""""""""""""""""
 A single normalized solar generation curve is applied to all regions. The curve is smooth throughout the year, with a well-defined peak precisely at mid-year. The profile is provided as a .npy file included in the input set.
 
-..figure::..
+.. figure:: ../pictures/unique_solarpattern.png
 
 Example of normalized solar pattern 
 
@@ -141,7 +141,7 @@ Per-region pattern profile
 """"""""""""""""""""""""
 Using PVGIS tools, a realistic solar profile is obtained for each region associated with a group of generators. A .json file provides the coordinates of each region (latitude, longitude), and the PVGIS API extracts an annual curve based on the average historical solar generation of that area, where a four-year data interval (preceding the specified start year or covering the full available period) is averaged to smooth abrupt spikes and highlight the underlying seasonal trend.
 
-..figure::..
+.. figure:: ../pictures/pvgis_solarpattern.png
 
 Example of normalized solar pattern from PVGIS. Region: :math:'latitude = 50.162527; longitude = 2.59862' 
 
