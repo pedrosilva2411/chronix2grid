@@ -143,7 +143,7 @@ Using PVGIS tools, a realistic solar profile is obtained for each region associa
 
 .. figure:: ../pictures/pvgis_solarpattern.png
 
-Example of normalized solar pattern from PVGIS. Region: :math:'latitude = 50.162527; longitude = 2.59862' 
+Example of normalized solar pattern from PVGIS. Region: :math:`latitude = 50.162527; longitude = 2.5986`
 
 Wind generation
 ^^^^^^^^^^^^^^^^^
